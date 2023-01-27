@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerMaps"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_cardview">
+
+    <TextView
+        android:id="@+id/tvMapsName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/maps_name"
+        android:maxLines="2"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/imgMapsIcon"
+        android:layout_width="380dp"
+        android:layout_height="213dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/maps_icon_desc"/>
+
+</LinearLayout>

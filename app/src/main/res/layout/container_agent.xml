@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerAgent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_cardview">
+
+    <TextView
+        android:id="@+id/tvAgentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/agent_name"
+        android:maxLines="2"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/imgAgentIcon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/agent_icon_desc" />
+
+    <LinearLayout
+        android:id="@+id/horizontalLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/titleRole"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/agent_role"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/agentRole"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titleSkills"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:maxLines="1"
+        android:text="@string/agent_skills"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/horizontalLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:id="@+id/VerticalLayout1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/titleAbility1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:text="Ability 1"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageAbility1"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/tvAbility1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/VerticalLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/titleAbility2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:text="Ability 2"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageAbility2"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/tvAbility2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/VerticalLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/titleGrenade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:text="Grenade"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageGrenade"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/tvGrenade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/VerticalLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/titleUltimate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:text="Ultimate"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageUltimate"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/tvUltimate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

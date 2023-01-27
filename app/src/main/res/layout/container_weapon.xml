@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerWeapon"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_cardview">
+
+    <TextView
+        android:id="@+id/tvWeaponName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/weapon_name"
+        android:maxLines="2"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/imgWeaponIcon"
+        android:layout_width="360dp"
+        android:layout_height="86dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/weapon_icon_desc" />
+
+    <LinearLayout
+        android:id="@+id/horizontalLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/titleCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/weapon_category"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/weaponCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/horizontalLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/titleMagazine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/weapon_magazine_size"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/weaponMagazine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/horizontalLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/titleFireRate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/weapon_fire_rate"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/weaponFireRate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/horizontalLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/titleReloadSpeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/weapon_reload_speed"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/weaponReloadSpeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

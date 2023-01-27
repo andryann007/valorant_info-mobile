@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/bg_cardview">
+
+    <ImageView
+        android:id="@+id/imgModeIcon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/maps_icon_desc"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp">
+
+        <TextView
+            android:id="@+id/tvModeName"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvModeDuration"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</LinearLayout>

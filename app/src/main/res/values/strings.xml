@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Valorant Data</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_navigation">Home</string>
+    <string name="character_navigation">Agents</string>
+    <string name="weapon_navigation">Weapons</string>
+    <string name="maps_navigation">Maps</string>
+    <string name="agent_role">Agent Role :</string>
+    <string name="agent_icon_desc">Agent Icon Images</string>
+    <string name="agent_name">Agent Name</string>
+    <string name="weapon_category">Weapon Category :</string>
+    <string name="weapon_name">Weapon Name</string>
+    <string name="weapon_icon_desc">Weapon Icon Images</string>
+    <string name="weapon_stats">Weapon Stats</string>
+    <string name="weapon_fire_rate">Fire Rate :</string>
+    <string name="weapon_reload_speed">Reload Speed :</string>
+    <string name="weapon_magazine_size">Magazine Size :</string>
+    <string name="agent_skills">Agent Abilities :</string>
+    <string name="maps_icon_desc">Maps Icon Images</string>
+    <string name="maps_name">Maps Name</string>
+    <string name="game_modes">Game Modes</string>
+    <string name="agents">Agents</string>
+    <string name="maps">Maps</string>
+    <string name="weapons">Weapons</string>
+</resources>
