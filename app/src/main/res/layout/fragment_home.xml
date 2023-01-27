@@ -32,8 +32,9 @@
                 android:layout_height="wrap_content"
                 android:scrollbars="horizontal"
                 android:orientation="horizontal"
+                app:spanCount="1"
                 android:overScrollMode="never"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 tools:listitem="@layout/container_mode"/>
 
             <TextView
@@ -54,12 +55,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="5dp"
-                android:scrollbars="vertical"
-                android:orientation="vertical"
-                app:spanCount="2"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
                 android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                tools:listitem="@layout/container_agent"/>
+                app:spanCount="2"
+                tools:listitem="@layout/container_agent" />
 
             <TextView
                 android:id="@+id/tvWeapons"
@@ -107,6 +108,7 @@
                 android:scrollbars="horizontal"
                 android:orientation="horizontal"
                 android:overScrollMode="never"
+                app:spanCount="1"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/container_maps"/>
 

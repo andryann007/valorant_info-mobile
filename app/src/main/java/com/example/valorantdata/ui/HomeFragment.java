@@ -76,7 +76,9 @@ public class HomeFragment extends Fragment {
     private void setGameModeData(View view) {
         RecyclerView rvGameModeData = view.findViewById(R.id.rvHomeGameMode);
         gameModeAdapter = new GameModeAdapter(gameModeData, getContext());
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),1);
 
+        rvGameModeData.setLayoutManager(gridLayoutManager);
         rvGameModeData.setAdapter(gameModeAdapter);
         getGameModeData();
     }
