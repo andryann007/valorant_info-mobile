@@ -57,11 +57,13 @@ public class GameModeAdapter extends RecyclerView.Adapter<GameModeAdapter.GameMo
         }
 
         public void bindItem(GameModeData gameModeData, Context context) {
-            Uri iconUrl = Uri.parse(gameModeData.getDisplayIconPath());
-            Picasso.get().load(iconUrl).into(modeImage);
+            if(gameModeData.getDisplayIconPath() != null && gameModeData.getDisplayName() != null && gameModeData.getDuration() != null){
+                Uri iconUrl = Uri.parse(gameModeData.getDisplayIconPath());
+                Picasso.get().load(iconUrl).into(modeImage);
 
-            textModeName.setText(gameModeData.getDisplayName());
-            textModeDuration.setText(gameModeData.getDuration());
+                textModeName.setText(gameModeData.getDisplayName());
+                textModeDuration.setText(gameModeData.getDuration());
+            }
         }
     }
 }
