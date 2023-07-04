@@ -1,11 +1,7 @@
 <resources>
     <string name="app_name">Valorant Data</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_navigation">Home</string>
-    <string name="character_navigation">Agents</string>
-    <string name="weapon_navigation">Weapons</string>
-    <string name="maps_navigation">Maps</string>
     <string name="agent_role">Agent Role :</string>
     <string name="agent_icon_desc">Agent Icon Images</string>
     <string name="agent_name">Agent Name</string>
@@ -19,8 +15,19 @@
     <string name="agent_skills">Agent Abilities :</string>
     <string name="maps_icon_desc">Maps Icon Images</string>
     <string name="maps_name">Maps Name</string>
-    <string name="game_modes">Game Modes</string>
-    <string name="agents">Agents</string>
-    <string name="maps">Maps</string>
-    <string name="weapons">Weapons</string>
+    <string name="text_no_result">No Result, Try Again Later</string>
+    <string name="text_agent_data">Valorant Agent Data</string>
+    <string name="text_maps">Valorant Maps</string>
+    <string name="text_weapon_data">Valorant Weapon Data</string>
+    <string name="text_game_modes">Valorant Game Modes</string>
+    <string name="character_navigation">Agent</string>
+    <string name="weapon_navigation">Weapon</string>
+    <string name="maps_navigation">Maps</string>
+    <string name="text_description">Description :</string>
+    <string name="text_abilities">Abilities :</string>
+    <string name="image_agent_full_portrait_desc">Image Agent Full Portrait</string>
+    <string name="text_weapon_stats">Weapon Stats :</string>
+    <string name="image_maps_splash_desc">Image Maps Splash</string>
+    <string name="text_agent_role">Role :</string>
+    <string name="text_weapon_skins">Weapon Skins :</string>
 </resources>

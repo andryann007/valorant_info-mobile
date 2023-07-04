@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/black"
+        android:elevation="5dp"
+        app:logo="@drawable/ic_back"
+        app:titleMarginStart="32dp"
+        app:titleTextColor="@color/white"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/agentDetailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/detailToolbar"
+        android:background="@drawable/bg_layout"
+        android:backgroundTint="#808080"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgAgentBackgroundFullPortrait"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.3"
+                    android:contentDescription="@string/image_agent_full_portrait_desc"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/imgAgentFullPortrait"
+                    android:layout_width="match_parent"
+                    android:layout_height="373.2dp"
+                    android:layout_gravity="center"
+                    android:alpha="0.5"
+                    android:contentDescription="@string/image_agent_full_portrait_desc"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgAgentIcon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/bg_image"
+                android:contentDescription="@string/agent_icon_desc"
+                android:scaleType="fitXY"
+                app:riv_corner_radius="5dp" />
+
+            <LinearLayout
+                android:id="@+id/textAgentGeneralInfo"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:layout_toEndOf="@+id/imgAgentIcon"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvAgentName"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="2"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvAgentRole"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/titleAgentRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgAgentIcon"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2.5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/text_agent_role"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/textAgentRoleInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleAgentRole"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/containerImgRoleIcon"
+                    android:layout_width="80dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_image"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="start|center_vertical"
+                    android:orientation="vertical"
+                    android:weightSum="5">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/imgRoleIcon"
+                        android:layout_width="80dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/bg_image"
+                        android:contentDescription="@string/agent_icon_desc"
+                        android:scaleType="fitXY"
+                        app:riv_corner_radius="5dp" />
+
+                    <TextView
+                        android:id="@+id/tvRoleName2"
+                        android:layout_width="80dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif"
+                        android:maxLines="2"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvRoleDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="start"
+                    android:maxLines="5"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/titleAgentDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textAgentRoleInfo"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2.5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/text_description"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textAgentDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleAgentDescription"
+                android:layout_marginHorizontal="10dp"
+                android:alpha="0.8"
+                android:fontFamily="sans-serif"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/titleAgentAbilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textAgentDescription"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2.5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/text_abilities"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAgentAbilitiesList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleAgentAbilities"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                android:scrollbars="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/container_abilities" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/mapsDetailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/detailToolbar"
+        android:background="@drawable/bg_layout"
+        android:backgroundTint="#808080"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.2">
+
+            <ImageView
+                android:id="@+id/imgMapsSplash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/image_maps_splash_desc"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvMapsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="5dp"
+            android:maxLines="2"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imgMapsIcon"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_below="@+id/tvMapsName"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_image"
+            android:scaleType="fitCenter"
+            app:riv_corner_radius="5dp"
+            android:contentDescription="@string/maps_icon_desc"/>
+
+        <TextView
+            android:id="@+id/tvMapsLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:layout_below="@+id/imgMapsIcon"
+            android:maxLines="2"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imgMapsLocation"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_below="@+id/tvMapsLocation"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_image"
+            android:scaleType="fitCenter"
+            app:riv_corner_radius="5dp"
+            android:contentDescription="@string/maps_icon_desc"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weaponDetailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/detailToolbar"
+        android:background="@drawable/bg_layout"
+        android:backgroundTint="#808080"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/containerWeaponIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_layout"
+            android:backgroundTint="#FFFFFF"
+            android:layout_centerHorizontal="true">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgWeaponIcon"
+                android:layout_width="320dp"
+                android:layout_height="120dp"
+                android:scaleType="fitCenter"
+                app:riv_corner_radius="10dp"
+                android:background="@drawable/bg_image"
+                android:backgroundTint="#000000"
+                android:contentDescription="@string/weapon_icon_desc"/>
+
+            <TextView
+                android:id="@+id/textWeaponName"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textWeaponGeneralInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/containerWeaponIcon"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvWeaponCategory"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvWeaponCost"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/titleWeaponStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textWeaponGeneralInfo"
+            android:text="@string/text_weapon_stats"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/textWeaponGeneralInfo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="2.5dp"
+            android:layout_below="@+id/titleWeaponStats"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvWeaponFireRate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvWeaponRunSpeed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textWeaponGeneralInfo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="2.5dp"
+            android:layout_below="@+id/textWeaponGeneralInfo2"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvWeaponMagazine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvWeaponEquipTime"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textWeaponGeneralInfo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="2.5dp"
+            android:layout_below="@+id/textWeaponGeneralInfo3"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvWeaponReloadTime"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvWeaponFireMode"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:fontFamily="sans-serif"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/titleWeaponSkin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textWeaponGeneralInfo4"
+            android:text="@string/text_weapon_skins"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWeaponSkinList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/titleWeaponSkin"
+            android:scrollbars="horizontal"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/container_weapon_skin"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/loadingDetailData"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

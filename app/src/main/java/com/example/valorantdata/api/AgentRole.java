@@ -9,6 +9,9 @@ public class AgentRole {
     @SerializedName("description")
     String roleDescription;
 
+    @SerializedName("displayIcon")
+    String displayIcon;
+
     public String getRoleName() {
         return roleName;
     }
@@ -17,8 +20,13 @@ public class AgentRole {
         return roleDescription;
     }
 
-    public AgentRole(String roleName, String roleDescription) {
+    public String getDisplayIcon() {
+        return displayIcon;
+    }
+
+    public AgentRole(String roleName, String roleDescription, String displayIcon) {
         this.roleName = roleName;
         this.roleDescription = roleDescription;
+        this.displayIcon = displayIcon;
     }
 }

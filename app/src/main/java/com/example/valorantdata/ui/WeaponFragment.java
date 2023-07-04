@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,11 @@ public class WeaponFragment extends Fragment {
     private WeaponAdapter weaponAdapter;
     private final List<WeaponData> weaponData = new ArrayList<>();
 
+    private RecyclerView rvWeaponData;
     private ProgressBar loadingWeaponData;
+    private TextView textNoResult;
+
+    public static final String language = "en-US";
 
     public WeaponFragment() {
         // Required empty public constructor
@@ -58,9 +63,11 @@ public class WeaponFragment extends Fragment {
     }
 
     private void setWeaponData(View view) {
-        RecyclerView rvWeaponData = view.findViewById(R.id.rvWeaponList);
-        weaponAdapter = new WeaponAdapter(weaponData, getContext());
+        rvWeaponData = view.findViewById(R.id.rvWeaponList);
         loadingWeaponData = view.findViewById(R.id.loadingWeaponData);
+        textNoResult = view.findViewById(R.id.textNoWeaponResult);
+
+        weaponAdapter = new WeaponAdapter(weaponData, getContext());
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),1);
 
         rvWeaponData.setLayoutManager(gridLayoutManager);
@@ -69,7 +76,6 @@ public class WeaponFragment extends Fragment {
     }
 
     private void getWeaponData() {
-        String language = "en-US";
         Call<WeaponResponse> call = apiService.getWeaponList(language);
         call.enqueue(new Callback<WeaponResponse>(){
 
@@ -77,9 +83,14 @@ public class WeaponFragment extends Fragment {
             public void onResponse(@NonNull Call<WeaponResponse> call, @NonNull Response<WeaponResponse> response) {
                 if(response.body() != null){
                     loadingWeaponData.setVisibility(View.GONE);
+                    rvWeaponData.setVisibility(View.VISIBLE);
+
                     int oldCount = weaponData.size();
                     weaponData.addAll(response.body().getData());
                     weaponAdapter.notifyItemChanged(oldCount, weaponData.size());
+                } else {
+                    loadingWeaponData.setVisibility(View.GONE);
+                    textNoResult.setVisibility(View.VISIBLE);
                 }
             }
 

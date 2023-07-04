@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="@string/game_modes"
+                android:text="@string/text_game_modes"
                 android:fontFamily="sans-serif"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -30,11 +30,11 @@
                 android:id="@+id/rvHomeGameMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
                 android:scrollbars="horizontal"
                 android:orientation="horizontal"
-                app:spanCount="1"
                 android:overScrollMode="never"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/container_mode"/>
 
             <TextView
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="15dp"
-                android:text="@string/agents"
+                android:text="@string/text_agent_data"
                 android:fontFamily="sans-serif"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -58,8 +58,7 @@
                 android:orientation="horizontal"
                 android:scrollbars="horizontal"
                 android:overScrollMode="never"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/container_agent" />
 
             <TextView
@@ -68,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="15dp"
-                android:text="@string/weapons"
+                android:text="@string/text_weapon_data"
                 android:fontFamily="sans-serif"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -82,9 +81,8 @@
                 android:layout_marginTop="5dp"
                 android:scrollbars="horizontal"
                 android:orientation="horizontal"
-                app:spanCount="1"
                 android:overScrollMode="never"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/container_weapon"/>
 
             <TextView
@@ -93,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="15dp"
-                android:text="@string/maps"
+                android:text="@string/text_maps"
                 android:fontFamily="sans-serif"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -108,15 +106,8 @@
                 android:scrollbars="horizontal"
                 android:orientation="horizontal"
                 android:overScrollMode="never"
-                app:spanCount="1"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/container_maps"/>
-
-            <ProgressBar
-                android:id="@+id/loadingData"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

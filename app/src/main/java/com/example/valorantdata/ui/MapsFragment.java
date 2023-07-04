@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,13 +30,16 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class MapsFragment extends Fragment {
-
     private ApiService apiService;
     private FragmentMapsBinding binding;
     private MapsAdapter mapsAdapter;
     private final List<MapsData> mapsData = new ArrayList<>();
 
     private ProgressBar loadingMapsData;
+    private RecyclerView rvMapsData;
+    private TextView textNoResult;
+
+    public static final String language = "en-US";
 
     public MapsFragment() {
         // Required empty public constructor
@@ -58,9 +62,11 @@ public class MapsFragment extends Fragment {
     }
 
     private void setMapsData(View view) {
-        RecyclerView rvMapsData = view.findViewById(R.id.rvMapsList);
-        mapsAdapter = new MapsAdapter(mapsData, getContext());
+        rvMapsData = view.findViewById(R.id.rvMapsList);
         loadingMapsData = view.findViewById(R.id.loadingMapsData);
+        textNoResult = view.findViewById(R.id.textNoMapsResult);
+
+        mapsAdapter = new MapsAdapter(mapsData, getContext());
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),1);
 
         rvMapsData.setLayoutManager(gridLayoutManager);
@@ -69,7 +75,6 @@ public class MapsFragment extends Fragment {
     }
 
     private void getMapsData() {
-        String language = "en-US";
         Call<MapsResponse> call = apiService.getMapsList(language);
         call.enqueue(new Callback<MapsResponse>(){
 
@@ -77,9 +82,14 @@ public class MapsFragment extends Fragment {
             public void onResponse(@NonNull Call<MapsResponse> call, @NonNull Response<MapsResponse> response) {
                 if(response.body() != null){
                     loadingMapsData.setVisibility(View.GONE);
+                    rvMapsData.setVisibility(View.VISIBLE);
+
                     int oldCount = mapsData.size();
                     mapsData.addAll(response.body().getData());
                     mapsAdapter.notifyItemChanged(oldCount, mapsData.size());
+                } else{
+                    loadingMapsData.setVisibility(View.GONE);
+                    textNoResult.setVisibility(View.VISIBLE);
                 }
             }
 

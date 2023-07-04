@@ -2,18 +2,12 @@ package com.example.valorantdata.api;
 
 import com.google.gson.annotations.SerializedName;
 
-public class MapsData {
+public class WeaponSkins {
     @SerializedName("uuid")
     String id;
 
     @SerializedName("displayName")
     String displayName;
-
-    @SerializedName("splash")
-    String mapsImagePath;
-
-    @SerializedName("listViewIcon")
-    String listViewIcon;
 
     @SerializedName("displayIcon")
     String displayIcon;
@@ -26,23 +20,13 @@ public class MapsData {
         return displayName;
     }
 
-    public String getMapsImagePath() {
-        return mapsImagePath;
-    }
-
-    public String getListViewIcon() {
-        return listViewIcon;
-    }
-
     public String getDisplayIcon() {
         return displayIcon;
     }
 
-    public MapsData(String id, String displayName, String mapsImagePath, String listViewIcon, String displayIcon) {
+    public WeaponSkins(String id, String displayName, String displayIcon) {
         this.id = id;
         this.displayName = displayName;
-        this.mapsImagePath = mapsImagePath;
-        this.listViewIcon = listViewIcon;
         this.displayIcon = displayIcon;
     }
 }

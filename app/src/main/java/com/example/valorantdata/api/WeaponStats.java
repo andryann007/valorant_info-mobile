@@ -4,29 +4,53 @@ import com.google.gson.annotations.SerializedName;
 
 public class WeaponStats {
     @SerializedName("fireRate")
-    String weaponFireRate;
+    double fireRate;
+
+    @SerializedName("runSpeedMultiplier")
+    double runSpeed;
 
     @SerializedName("magazineSize")
-    String weaponMagazine;
+    int magazineSize;
+
+    @SerializedName("equipTimeSeconds")
+    double equipTime;
 
     @SerializedName("reloadTimeSeconds")
-    String reloadTime;
+    double reloadTime;
 
-    public String getWeaponFireRate() {
-        return weaponFireRate;
+    @SerializedName("fireMode")
+    String fireMode;
+
+    public double getFireRate() {
+        return fireRate;
     }
 
-    public String getWeaponMagazine() {
-        return weaponMagazine;
+    public double getRunSpeed() {
+        return runSpeed;
     }
 
-    public String getReloadTime() {
+    public int getMagazineSize() {
+        return magazineSize;
+    }
+
+    public double getEquipTime() {
+        return equipTime;
+    }
+
+    public double getReloadTime() {
         return reloadTime;
     }
 
-    public WeaponStats(String weaponFireRate, String weaponMagazine, String reloadTime) {
-        this.weaponFireRate = weaponFireRate;
-        this.weaponMagazine = weaponMagazine;
+    public String getFireMode() {
+        return fireMode;
+    }
+
+    public WeaponStats(double fireRate, double runSpeed, int magazineSize, double equipTime, double reloadTime, String fireMode) {
+        this.fireRate = fireRate;
+        this.runSpeed = runSpeed;
+        this.magazineSize = magazineSize;
+        this.equipTime = equipTime;
         this.reloadTime = reloadTime;
+        this.fireMode = fireMode;
     }
 }

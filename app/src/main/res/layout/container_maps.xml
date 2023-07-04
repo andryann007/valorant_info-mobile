@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/containerMaps"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="5dp"
-    android:layout_marginBottom="5dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp"
     android:orientation="vertical"
-    android:background="@drawable/bg_cardview">
+    android:background="@drawable/bg_layout">
 
     <TextView
         android:id="@+id/tvMapsName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="@string/maps_name"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="2.5dp"
         android:maxLines="2"
         android:fontFamily="sans-serif"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imgMapsIcon"
         android:layout_width="380dp"
-        android:layout_height="213dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="5dp"
-        android:scaleType="fitXY"
-        android:contentDescription="@string/maps_icon_desc"/>
+        android:background="@drawable/bg_image"
+        android:scaleType="fitCenter"
+        app:riv_corner_radius="5dp"
+        android:contentDescription="@string/maps_icon_desc"
+        app:layout_constraintTop_toBottomOf="@+id/tvMapsName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/loadingMapsImage"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/imgMapsIcon"
+        app:layout_constraintStart_toStartOf="@+id/imgMapsIcon"
+        app:layout_constraintEnd_toEndOf="@+id/imgMapsIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/imgMapsIcon"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

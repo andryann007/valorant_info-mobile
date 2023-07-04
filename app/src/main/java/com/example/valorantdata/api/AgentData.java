@@ -2,7 +2,7 @@ package com.example.valorantdata.api;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class AgentData {
     @SerializedName("uuid")
@@ -14,14 +14,20 @@ public class AgentData {
     @SerializedName("displayIcon")
     String displayIconPath;
 
+    @SerializedName("fullPortrait")
+    String fullPortrait;
+
     @SerializedName("displayName")
     String displayName;
 
     @SerializedName("role")
     AgentRole agentRole;
 
+    @SerializedName("description")
+    String description;
+
     @SerializedName("abilities")
-    List<AgentAbilities> agentAbilities;
+    ArrayList<AgentAbilities> agentAbilities;
 
     public String getBackgroundPath() {
         return backgroundPath;
@@ -39,7 +45,15 @@ public class AgentData {
         return agentRole;
     }
 
-    public List<AgentAbilities> getAgentAbilities() {
+    public String getFullPortrait() {
+        return fullPortrait;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public ArrayList<AgentAbilities> getAgentAbilities() {
         return agentAbilities;
     }
 
@@ -51,12 +65,14 @@ public class AgentData {
         this.id = id;
     }
 
-    public AgentData(String id, String backgroundPath, String displayIconPath, String displayName, AgentRole agentRole, List<AgentAbilities> agentAbilities) {
+    public AgentData(String id, String backgroundPath, String displayIconPath, String fullPortrait, String displayName, AgentRole agentRole, String description, ArrayList<AgentAbilities> agentAbilities) {
         this.id = id;
         this.backgroundPath = backgroundPath;
         this.displayIconPath = displayIconPath;
+        this.fullPortrait = fullPortrait;
         this.displayName = displayName;
         this.agentRole = agentRole;
+        this.description = description;
         this.agentAbilities = agentAbilities;
     }
 }

@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.valorantdata.R;
@@ -38,7 +38,6 @@ import retrofit2.Retrofit;
 
 public class HomeFragment extends Fragment {
     private ApiService apiService;
-    private FragmentHomeBinding binding;
 
     private GameModeAdapter gameModeAdapter;
     private AgentAdapter agentAdapter;
@@ -50,6 +49,9 @@ public class HomeFragment extends Fragment {
     private final List<WeaponData> weaponData = new ArrayList<>();
     private final List<MapsData> mapsData = new ArrayList<>();
 
+    public static final String language = "en-US";
+    public static final boolean isPlayable = true;
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -59,7 +61,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         super.onCreate(savedInstanceState);
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        com.example.valorantdata.databinding.FragmentHomeBinding binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         Retrofit retrofit = ApiClient.getClient();
@@ -75,16 +77,17 @@ public class HomeFragment extends Fragment {
 
     private void setGameModeData(View view) {
         RecyclerView rvGameModeData = view.findViewById(R.id.rvHomeGameMode);
-        gameModeAdapter = new GameModeAdapter(gameModeData, getContext());
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),1);
 
-        rvGameModeData.setLayoutManager(gridLayoutManager);
+        gameModeAdapter = new GameModeAdapter(gameModeData, getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        rvGameModeData.setLayoutManager(linearLayoutManager);
         rvGameModeData.setAdapter(gameModeAdapter);
         getGameModeData();
     }
 
     private void getGameModeData() {
-        String language = "en-US";
         Call<GameModeResponse> call = apiService.getGameModeList(language);
         call.enqueue(new Callback<GameModeResponse>(){
 
@@ -107,17 +110,17 @@ public class HomeFragment extends Fragment {
 
     private void setAgentData(View view) {
         RecyclerView rvAgentData = view.findViewById(R.id.rvHomeAgent);
-        agentAdapter = new AgentAdapter(agentData, getContext());
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2);
 
-        rvAgentData.setLayoutManager(gridLayoutManager);
+        agentAdapter = new AgentAdapter(agentData, getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        rvAgentData.setLayoutManager(linearLayoutManager);
         rvAgentData.setAdapter(agentAdapter);
         getAgentData();
     }
 
     private void getAgentData() {
-        String language = "en-US";
-        boolean isPlayable = true;
         Call<AgentResponse> call = apiService.getAgentList(language, isPlayable);
         call.enqueue(new Callback<AgentResponse>(){
 
@@ -140,16 +143,17 @@ public class HomeFragment extends Fragment {
 
     private void setWeaponData(View view) {
         RecyclerView rvWeaponData = view.findViewById(R.id.rvHomeWeapon);
-        weaponAdapter = new WeaponAdapter(weaponData, getContext());
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),1);
 
-        rvWeaponData.setLayoutManager(gridLayoutManager);
+        weaponAdapter = new WeaponAdapter(weaponData, getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        rvWeaponData.setLayoutManager(linearLayoutManager);
         rvWeaponData.setAdapter(weaponAdapter);
         getWeaponData();
     }
 
     private void getWeaponData() {
-        String language = "en-US";
         Call<WeaponResponse> call = apiService.getWeaponList(language);
         call.enqueue(new Callback<WeaponResponse>(){
 
@@ -172,14 +176,17 @@ public class HomeFragment extends Fragment {
 
     private void setMapsData(View view) {
         RecyclerView rvMapsData = view.findViewById(R.id.rvHomeMaps);
-        mapsAdapter = new MapsAdapter(mapsData, getContext());
 
+        mapsAdapter = new MapsAdapter(mapsData, getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        rvMapsData.setLayoutManager(linearLayoutManager);
         rvMapsData.setAdapter(mapsAdapter);
         getMapsData();
     }
 
     private void getMapsData() {
-        String language = "en-US";
         Call<MapsResponse> call = apiService.getMapsList(language);
         call.enqueue(new Callback<MapsResponse>(){
 

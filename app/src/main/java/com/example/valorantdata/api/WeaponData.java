@@ -2,6 +2,8 @@ package com.example.valorantdata.api;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class WeaponData {
     @SerializedName("uuid")
     String id;
@@ -17,6 +19,9 @@ public class WeaponData {
 
     @SerializedName("shopData")
     WeaponShopData weaponShopData;
+
+    @SerializedName("skins")
+    ArrayList<WeaponSkins> weaponSkins;
 
     public String getId() {
         return id;
@@ -38,11 +43,16 @@ public class WeaponData {
         return weaponShopData;
     }
 
-    public WeaponData(String id, String displayName, String displayIconPath, WeaponStats weaponStats, WeaponShopData weaponShopData) {
+    public ArrayList<WeaponSkins> getWeaponSkins() {
+        return weaponSkins;
+    }
+
+    public WeaponData(String id, String displayName, String displayIconPath, WeaponStats weaponStats, WeaponShopData weaponShopData, ArrayList<WeaponSkins> weaponSkins) {
         this.id = id;
         this.displayName = displayName;
         this.displayIconPath = displayIconPath;
         this.weaponStats = weaponStats;
         this.weaponShopData = weaponShopData;
+        this.weaponSkins = weaponSkins;
     }
 }

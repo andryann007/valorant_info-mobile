@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp"
+    android:background="@drawable/bg_image"
+    android:backgroundTint="#808080">
+
+    <LinearLayout
+        android:id="@+id/containerImgAbilititesIcon"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_image"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="start|center_vertical"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imgAbilitiesIcon"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:background="@drawable/bg_image"
+            android:scaleType="fitXY"
+            app:riv_corner_radius="5dp"
+            android:contentDescription="@string/agent_icon_desc"/>
+
+        <TextView
+            android:id="@+id/tvAbilitiesSlot"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:maxLines="2"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_toEndOf="@+id/containerImgAbilititesIcon"
+        android:gravity="start|center_vertical"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/tvAbilitiesName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start|center_vertical"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tvAbilitiesDescription"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:layout_marginHorizontal="10dp"
+            android:fontFamily="sans-serif"
+            android:gravity="start|center_vertical"
+            android:maxLines="5"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

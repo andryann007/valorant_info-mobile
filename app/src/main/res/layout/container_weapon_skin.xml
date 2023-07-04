@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/bg_layout"
+    android:backgroundTint="#FFFFFF">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imgWeaponSkinIcon"
+        android:layout_width="320dp"
+        android:layout_height="120dp"
+        android:scaleType="fitCenter"
+        app:riv_corner_radius="10dp"
+        android:background="@drawable/bg_image"
+        android:backgroundTint="#000000"
+        android:contentDescription="@string/weapon_icon_desc"/>
+
+    <TextView
+        android:id="@+id/textWeaponSkinName"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

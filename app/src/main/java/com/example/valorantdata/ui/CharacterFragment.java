@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,8 +35,12 @@ public class CharacterFragment extends Fragment {
     private AgentAdapter agentAdapter;
     private final List<AgentData> agentData = new ArrayList<>();
 
+    private RecyclerView rvAgentData;
     private ProgressBar loadingAgentData;
+    private TextView textNoResult;
 
+    public static final String language = "en-US";
+    public static final boolean isPlayable = true;
     public CharacterFragment() {
         // Required empty public constructor
     }
@@ -57,9 +62,11 @@ public class CharacterFragment extends Fragment {
     }
 
     private void setAgentData(View view) {
-        RecyclerView rvAgentData = view.findViewById(R.id.rvAgentList);
-        agentAdapter = new AgentAdapter(agentData, getContext());
+        rvAgentData = view.findViewById(R.id.rvAgentList);
         loadingAgentData = view.findViewById(R.id.loadingAgentData);
+        textNoResult = view.findViewById(R.id.textNoAgentResult);
+
+        agentAdapter = new AgentAdapter(agentData, getContext());
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2);
 
         rvAgentData.setLayoutManager(gridLayoutManager);
@@ -68,8 +75,6 @@ public class CharacterFragment extends Fragment {
     }
 
     private void getAgentData() {
-        String language = "en-US";
-        boolean isPlayable = true;
         Call<AgentResponse> call = apiService.getAgentList(language, isPlayable);
         call.enqueue(new Callback<AgentResponse>(){
 
@@ -77,9 +82,14 @@ public class CharacterFragment extends Fragment {
             public void onResponse(@NonNull Call<AgentResponse> call, @NonNull Response<AgentResponse> response) {
                 if(response.body() != null){
                     loadingAgentData.setVisibility(View.GONE);
+                    rvAgentData.setVisibility(View.VISIBLE);
+
                     int oldCount = agentData.size();
                     agentData.addAll(response.body().getData());
-                    agentAdapter.notifyItemChanged(oldCount, agentData.size());
+                    agentAdapter.notifyItemRangeInserted(oldCount, agentData.size());
+                } else {
+                    loadingAgentData.setVisibility(View.GONE);
+                    textNoResult.setVisibility(View.VISIBLE);
                 }
             }
 
