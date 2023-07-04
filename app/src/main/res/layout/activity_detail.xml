@@ -222,8 +222,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/titleAgentAbilities"
                 android:orientation="vertical"
-                android:overScrollMode="never"
                 android:scrollbars="vertical"
+                android:overScrollMode="never"
                 android:visibility="gone"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/container_abilities" />
@@ -514,8 +514,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/titleWeaponSkin"
-            android:scrollbars="horizontal"
-            android:orientation="horizontal"
+            android:scrollbars="vertical"
+            android:orientation="vertical"
+            android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/container_weapon_skin"
             android:visibility="gone"/>
