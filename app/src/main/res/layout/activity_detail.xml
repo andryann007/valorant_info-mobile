@@ -307,7 +307,7 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/weaponDetailLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -316,212 +316,218 @@
         android:backgroundTint="#808080"
         android:visibility="gone">
 
-        <LinearLayout
-            android:id="@+id/containerWeaponIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:background="@drawable/bg_layout"
-            android:backgroundTint="#FFFFFF"
-            android:layout_centerHorizontal="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/imgWeaponIcon"
-                android:layout_width="320dp"
-                android:layout_height="120dp"
-                android:scaleType="fitCenter"
-                app:riv_corner_radius="10dp"
-                android:background="@drawable/bg_image"
-                android:backgroundTint="#000000"
-                android:contentDescription="@string/weapon_icon_desc"/>
+            <LinearLayout
+                android:id="@+id/containerWeaponIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_layout"
+                android:backgroundTint="#FFFFFF"
+                android:layout_centerHorizontal="true">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgWeaponIcon"
+                    android:layout_width="320dp"
+                    android:layout_height="120dp"
+                    android:scaleType="fitCenter"
+                    app:riv_corner_radius="10dp"
+                    android:background="@drawable/bg_image"
+                    android:backgroundTint="#000000"
+                    android:contentDescription="@string/weapon_icon_desc"/>
+
+                <TextView
+                    android:id="@+id/textWeaponName"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/textWeaponGeneralInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/containerWeaponIcon"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvWeaponCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tvWeaponCost"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="16sp"/>
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/textWeaponName"
-                android:layout_width="320dp"
+                android:id="@+id/titleWeaponStats"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/textWeaponGeneralInfo"
+                android:text="@string/text_weapon_stats"
                 android:fontFamily="sans-serif"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_dark"
+                android:textColor="@android:color/background_light"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/textWeaponGeneralInfo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2.5dp"
+                android:layout_below="@+id/titleWeaponStats"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-        <LinearLayout
-            android:id="@+id/textWeaponGeneralInfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/containerWeaponIcon"
-            android:orientation="horizontal"
-            android:weightSum="2">
+                <TextView
+                    android:id="@+id/tvWeaponFireRate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="16sp"/>
 
-            <TextView
-                android:id="@+id/tvWeaponCategory"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:fontFamily="sans-serif"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_light"
-                android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tvWeaponRunSpeed"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="16sp"/>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvWeaponCost"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:maxLines="1"
-                android:fontFamily="sans-serif"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_light"
-                android:textSize="16sp"/>
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/textWeaponGeneralInfo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2.5dp"
+                android:layout_below="@+id/textWeaponGeneralInfo2"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-        <TextView
-            android:id="@+id/titleWeaponStats"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/textWeaponGeneralInfo"
-            android:text="@string/text_weapon_stats"
-            android:fontFamily="sans-serif"
-            android:textColor="@android:color/background_light"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tvWeaponMagazine"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="16sp"/>
 
-        <LinearLayout
-            android:id="@+id/textWeaponGeneralInfo2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="2.5dp"
-            android:layout_below="@+id/titleWeaponStats"
-            android:orientation="horizontal"
-            android:weightSum="2">
+                <TextView
+                    android:id="@+id/tvWeaponEquipTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="16sp"/>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvWeaponFireRate"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:fontFamily="sans-serif"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_light"
-                android:textSize="16sp"/>
+            <LinearLayout
+                android:id="@+id/textWeaponGeneralInfo4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2.5dp"
+                android:layout_below="@+id/textWeaponGeneralInfo3"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-            <TextView
-                android:id="@+id/tvWeaponRunSpeed"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:maxLines="1"
-                android:fontFamily="sans-serif"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_light"
-                android:textSize="16sp"/>
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tvWeaponReloadTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="16sp"/>
 
-        <LinearLayout
-            android:id="@+id/textWeaponGeneralInfo3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="2.5dp"
-            android:layout_below="@+id/textWeaponGeneralInfo2"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <TextView
-                android:id="@+id/tvWeaponMagazine"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:fontFamily="sans-serif"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_light"
-                android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tvWeaponFireMode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="16sp"/>
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/tvWeaponEquipTime"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:maxLines="1"
+                android:id="@+id/titleWeaponSkin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/textWeaponGeneralInfo4"
+                android:text="@string/text_weapon_skins"
                 android:fontFamily="sans-serif"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="@android:color/background_light"
-                android:textSize="16sp"/>
-        </LinearLayout>
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
-        <LinearLayout
-            android:id="@+id/textWeaponGeneralInfo4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="2.5dp"
-            android:layout_below="@+id/textWeaponGeneralInfo3"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvWeaponSkinList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/titleWeaponSkin"
+                android:scrollbars="vertical"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/container_weapon_skin"
+                android:visibility="gone"/>
 
-            <TextView
-                android:id="@+id/tvWeaponReloadTime"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:fontFamily="sans-serif"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_light"
-                android:textSize="16sp"/>
+        </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tvWeaponFireMode"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:maxLines="1"
-                android:fontFamily="sans-serif"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_light"
-                android:textSize="16sp"/>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/titleWeaponSkin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/textWeaponGeneralInfo4"
-            android:text="@string/text_weapon_skins"
-            android:fontFamily="sans-serif"
-            android:textAlignment="textStart"
-            android:textColor="@android:color/background_light"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvWeaponSkinList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/titleWeaponSkin"
-            android:scrollbars="vertical"
-            android:orientation="vertical"
-            android:overScrollMode="never"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/container_weapon_skin"
-            android:visibility="gone"/>
-
-    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <ProgressBar
         android:id="@+id/loadingDetailData"
